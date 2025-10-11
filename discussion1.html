@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discuter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ebeae5;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: center;   /* center the logo */
+      align-items: center;
+      padding: 10px;
+      background: linear-gradient(-45deg, #08117b, #3c0404, #090f3c, #050c3c);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      position: relative;        /* for the home button */
+    }
+
+    header img {
+      height: 40px;             /* smaller logo */
+    }
+
+    .home-tab {
+      position: absolute;
+      left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      background-color: transparent; /* fully transparent */
+      transition: color 0.2s;
+    }
+
+    .home-tab:hover {
+      color: #b3b0a5;           /* hover feedback */
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    /* Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea, button {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #08117b;   /* discussion button color */
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #050c3c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="home-tab">Accueil</a>
+    <img src="Méthos_Logo.png" alt="Logo">
+  </header>
+
+  <div class="container">
+    <h1>Discuter</h1>
+    <form action="#" method="post">
+      <input type="text" name="username" placeholder="Votre nom" required>
+      <textarea name="message" rows="6" placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
+
+</body>
+</html>
