@@ -3,157 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Méthos — Articles et Discussions</title>
+  <title>Index</title>
   <style>
-    /* Reset default margins/padding */
-    * {
+    body {
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      background-color: #ebeae5;
     }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #fff8e1, #ffffff);
-      color: #0a1b3a;
-    }
-
-    /* Top Logo Strip */
-    .logo-bar {
-      width: 100%;
-      background-color: #030345; /* deep royal blue */
-      padding: 10px 20px;
+    header {
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: flex-start;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: fixed;
-      top: 0;
-      z-index: 1001;
-    }
-
-    .logo-bar img {
-      height: 40px;
-    }
-
-    /* Navigation Bar */
-    nav {
-      position: fixed;
-      top: 50px; /* below logo bar */
-      width: 100%;
-      background-color: #1a2a5c; /* dark monarchic blue */
-      padding: 15px 20px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px 20px;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: #334080;
-    }
-
-    /* Content padding */
-    .content {
-      padding-top: 130px; /* space for fixed bars */
-    }
-
-    /* Article Section */
-    .articles {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
       padding: 20px;
-      max-width: 1200px;
-      margin: auto;
+      /* Gradient background */
+      background: linear-gradient(-45deg, #08117b, #3c0404, #090f3c, #050c3c);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
     }
 
-    .article-card {
-      background-color: #ffffff;
-      border-radius: 15px;
-      padding: 25px;
-      width: 300px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      text-align: left;
+    header img {
+      height: 60px;
     }
 
-    .article-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    .article-card h3 {
-      color: #1a2a5c;
-      margin-bottom: 10px;
-      font-size: 1.3em;
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
     }
 
-    .article-card p {
-      color: #0a1b3a;
-      font-size: 1em;
-    }
-
-    /* Footer */
-    footer {
-      padding: 50px 0;
+    h2 {
       text-align: center;
-      font-size: 0.9em;
-      color: #0a1b3a;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #333;
     }
+
+    .boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* Remove default link styles */
+    .box {
+      display: block;           /* so padding and dimensions work like div */
+      text-decoration: none;    /* remove underline */
+      color: inherit;           /* inherit text color from box */
+      background-color: rgb(194, 176, 176);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      background-color: rgb(174, 156, 156); /* optional hover color change */
+    }
+
+
+    .propose-box {
+      display: block;
+      text-decoration: none;
+      color: white;
+      background-color: #090f3c;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      margin-top: 50px; /* <-- add more space above */
+    }
+
+    .propose-box:hover {
+      background-color: #280600;
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- Logo Bar -->
-  <div class="logo-bar">
-    <img src="Méthos_Logo.png" alt="Logo Méthos"> <!-- Replace with your logo -->
+  <header>
+    <img src="Méthos_Logo.png" alt="Logo">
+  </header>
+
+  <div class="container">
+    <h2>Sujets de discussion</h2>
+
+<div class="boxes">
+  <a href="Article1.html" class="box">Sujet 1</a>
+
+
+  
+</div>
+
+    <a href="proposer.html" class="propose-box">Proposer un sujet</a>
+
   </div>
-
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="Discussions.html">Participer aux discussions</a>
-    <a href="Ecrire.html">Écrire un article</a>
-  </nav>
-
-  <!-- Main Content -->
-  <div class="content">
-    <section class="articles">
-      <!-- Article 1 -->
-      <div class="article-card" onclick="window.location.href='Article1.html'">
-        <h3>.</h3>
-        <p>.</p>
-      </div>
-
-      <!-- Article 2 -->
-      <div class="article-card" onclick="window.location.href='Article2.html'">
-        <h3>.</h3>
-        <p>.</p>
-      </div>
-
-      <!-- Article 3 -->
-      <div class="article-card" onclick="window.location.href='Article3.html'">
-        <h3>.</h3>
-        <p>.</p>
-      </div>
-    </section>
-  </div>
-
-  <footer>
-    &copy; 2025 Méthos. Tous droits réservés.
-  </footer>
 
 </body>
 </html>
