@@ -3,170 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comment améliorer sa productivité</title>
+  <title>Sujet 1</title>
   <style>
-    * {
+    body {
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      background-color: #ebeae5;
     }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-      background: linear-gradient(to right, #fff8e1, #ffffff);
-      color: #0a1b3a;
-      line-height: 1.6;
+header {
+  display: flex;
+  justify-content: center;   /* center the logo */
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(-45deg, #08117b, #3c0404, #090f3c, #050c3c);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  position: relative;        /* needed for absolute positioning of home tab */
+}
+
+header img {
+  height: 40px;
+}
+
+.home-tab {
+  position: absolute;
+  left: 20px;                /* position on the left */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  background-color: transparent; /* fully transparent */
+  border-radius: 5px;         /* optional, can remove if not needed */
+  transition: color 0.2s;
+}
+
+.home-tab:hover {
+  color: #c4c1b8;             /* optional: change color on hover for feedback */
+}
+
+
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    /* Logo Bar */
-    .logo-bar {
-      width: 100%;
-      background-color: #030345;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: fixed;
-      top: 0;
-      z-index: 1001;
-    }
-
-    .logo-bar img {
-      height: 40px;
-    }
-
-    /* Navigation Bar */
-    nav {
-      position: fixed;
-      top: 50px;
-      width: 100%;
-      background-color: #1a2a5c;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px 20px;
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+      background-color: white;
       border-radius: 8px;
-      transition: background 0.3s ease;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    nav a:hover {
-      background-color: #334080;
-    }
-
-    /* Article Content */
-    .content {
-      max-width: 900px;
-      margin: 150px auto 50px; /* top margin accounts for fixed bars */
-      background-color: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      padding: 40px;
-    }
-
-    .content h1 {
-      color: #1a2a5c;
-      font-size: 2.5em;
-      margin-bottom: 20px;
+    h1 {
       text-align: center;
+      color: #333;
     }
 
-    .content h2 {
-      color: #1a2a5c;
-      margin-top: 30px;
-      margin-bottom: 10px;
+    p {
+      line-height: 1.6;
+      color: #555;
     }
 
-    .content p {
-      font-size: 1.1em;
-      color: #0a1b3a;
-      margin-bottom: 20px;
-      text-align: justify;
-    }
+    .discuter-box {
+  display: block;
+  text-decoration: none;   /* remove underline */
+  color: white;
+  background-color: #08117b; /* you can change color */
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  margin-top: 30px;       /* space from article */
+}
 
-    .back-link {
-      display: block;
-      text-align: center;
-      margin-top: 40px;
-      font-weight: bold;
-    }
+.discuter-box:hover {
+  background-color: #050c3c;
+  transform: translateY(-3px);
+}
 
-    .back-link a {
-      color: #1a2a5c;
-      text-decoration: none;
-      border: 2px solid #1a2a5c;
-      padding: 10px 20px;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .back-link a:hover {
-      background-color: #1a2a5c;
-      color: white;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 0;
-      font-size: 0.9em;
-      color: #0a1b3a;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Logo Bar -->
-  <div class="logo-bar">
-    <img src="Méthos_Logo.png" alt="Logo">
-  </div>
+<header>
+  <a href="index.html" class="home-tab">Accueil</a>
+  <img src="Méthos_Logo.png" alt="Logo">
+</header>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="Discussions.html">Participer aux discussions</a>
-    <a href="Ecrire.html">Écrire un article</a>
-  </nav>
 
-  <!-- Article Content -->
-  <div class="content">
-    <h1>.</h1>
+  <div class="container">
+    <h1>Sujet 1</h1>
+    <article>
+      <p>Voici le contenu de l'article pour Sujet 1. Vous pouvez ajouter des paragraphes, images, ou tout autre contenu ici.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet erat ut nulla aliquet aliquam.</p>
+    </article>
 
-    <p>.</p>
 
-    <h2>.</h2>
-    <p>.</p>
+  <!-- Discuter box -->
+  <a href="discussion1.html" class="discuter-box">Discuter</a>
+</div>
 
-    <h2>.</h2>
-    <p>.</p>
-
-    <h2>.</h2>
-    <p>.</p>
-
-    <h2>.</h2>
-    <p>.</p>
-
-    <h2>.</h2>
-    <p>.</p>
-
-    <p>.</p>
-
-    <div class="back-link">
-      <a href="index.html">← Retour aux articles</a>
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 Mon Site Élégant. Tous droits réservés.
-  </footer>
 
 </body>
 </html>
