@@ -12,38 +12,41 @@
       background-color: #ebeae5;
     }
 
-header {
-  display: flex;
-  justify-content: center;   /* center the logo */
-  align-items: center;
-  padding: 10px;
-  background: linear-gradient(-45deg, #08117b, #3c0404, #090f3c, #050c3c);
-  background-size: 400% 400%;
-  animation: gradientMove 15s ease infinite;
-  position: relative;        /* needed for absolute positioning of home tab */
-}
-
-header img {
-  height: 40px;
-}
-
-.home-tab {
-  position: absolute;
-  left: 20px;                /* position on the left */
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 12px;
-  background-color: transparent; /* fully transparent */
-  border-radius: 5px;         /* optional, can remove if not needed */
-  transition: color 0.2s;
-}
-
-.home-tab:hover {
-  color: #c4c1b8;             /* optional: change color on hover for feedback */
-}
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      background: linear-gradient(-45deg, #08117b, #3c0404, #090f3c, #050c3c);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      position: fixed; 
+      top: 0;        
+      left: 0;
+      width: 100%;    
+      z-index: 1000;  
+    }
 
 
+    header img {
+      height: 40px;
+    }
+
+    .home-tab {
+      position: absolute;
+      left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      background-color: transparent;
+      border-radius: 5px;
+      transition: color 0.2s;
+    }
+
+    .home-tab:hover {
+      color: #c4c1b8;
+    }
 
     @keyframes gradientMove {
       0% { background-position: 0% 50%; }
@@ -53,11 +56,10 @@ header img {
 
     .container {
       max-width: 800px;
-      margin: 20px auto;
-      padding: 0 20px;
+      margin: 80px auto 20px;
+      padding: 20px;
       background-color: white;
       border-radius: 8px;
-      padding: 20px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
@@ -66,30 +68,38 @@ header img {
       color: #333;
     }
 
-    p {
-      line-height: 1.6;
+      h2.undertitle {
+    text-align: center;   
+    color: #555;
+    font-weight: normal;
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+    article p {
+      text-align: justify;  
+      line-height: 1.8;
       color: #555;
     }
 
     .discuter-box {
-  display: block;
-  text-decoration: none;   /* remove underline */
-  color: white;
-  background-color: #08117b; /* you can change color */
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s;
-  margin-top: 30px;       /* space from article */
-}
+      display: block;
+      text-decoration: none;
+      color: white;
+      background-color: #08117b;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.2s;
+      margin-top: 30px;
+    }
 
-.discuter-box:hover {
-  background-color: #050c3c;
-  transform: translateY(-3px);
-}
-
+    .discuter-box:hover {
+      background-color: #050c3c;
+      transform: translateY(-3px);
+    }
   </style>
 </head>
 <body>
@@ -99,21 +109,24 @@ header img {
   <img src="Méthos_Logo.png" alt="Logo">
 </header>
 
+<div class="container">
+  <h1>Le jeu du PSG relève du sophisme:</h1>
+  <h2 class="undertitle">il se donne les apparences de la maitrise et de la profondeur tactique, mais dissimule un manque de cohérence réelle.</h2>
+  <article>
+    <p>On entend souvent dire « ils sont trop fort ». C’est vrai qu’à première vue, c’est magnifique à regarder : les passes s’enchaînent avec fluidité, le ballon circule vite, tout semble maîtrisé. Quand on regarde Paris jouer, on a parfois l’impression d’assister à une démonstration de football moderne, pleine de style et d’assurance. Mais en creusant un peu, on se rend compte que cette beauté cache encore pas mal de défauts.</p>
 
-  <div class="container">
-    <h1>Le jeu du PSG relève du sophisme</h1>
-    <article>
-      <p>Le jeu du PSG relève du sophisme : il se donne les apparences de la maitrise et de la profondeur tactique, mais dissimule un manque de cohérence réelle.</p>
-      <p></p>
-    </article>
+    <p>Ce qui frappe le plus, c’est le décalage entre la forme et le fond. Le PSG donne l’impression de dominer, de tout contrôler, mais combien d’occasions finissent par être gâchées ? Combien d’actions brillantes se terminent sans but, faute de précision ou de lucidité ? C’est là où l’on retrouve une sorte de sophisme, une apparence de beauté : derrière la maîtrise technique et le spectacle, il y a une certaine fragilité. Le jeu est beau, oui, mais il manque parfois de tranchant, comme si Paris cherchait plus à séduire qu’à tuer le match.</p>
 
+    <p>Ce sentiment se renforce quand on revoit certains matchs de cette année. Paris a souvent offert un football plaisant, mais sans toujours concrétiser sa supériorité. On garde l’impression d’une équipe qui fait tout bien, sauf l’essentiel : marquer quand il le faut, gérer ses temps faibles, rester concentrée. À force de vouloir bien faire, le PSG finit parfois par se compliquer la vie. C’est un peu frustrant, parce qu’on sent qu’il ne manque pas grand-chose pour que cette domination se traduise vraiment en efficacité.</p>
+
+    <p>Pour un supporter, c’est à la fois beau et agaçant. Beau, parce que le jeu proposé est élégant, audacieux, vivant. Agaçant, parce qu’on sait que derrière cette allure parfaite se cachent des imprécisions qui coûtent cher : des passes manquées dans les moments décisifs, des frappes mal ajustées, des erreurs de concentration qui relancent l’adversaire. C’est ce paradoxe permanent : Paris éblouit, mais laisse toujours ce goût d’inachevé.</p>
+
+    <p>Alors non, le jeu du PSG n’est pas un sophisme total, mais il n’est pas non plus parfait. Il brille par son esthétique, par sa capacité à captiver, mais il manque encore de rigueur dans le fond. On aime le voir jouer, on s’émerveille souvent, mais on finit aussi par soupirer devant toutes ces occasions manquées. C’est beau, oui — mais parfois, trop beau pour être vraiment solide.</p>
+  </article>
 
   <!-- Discuter box -->
   <a href="discussion1.html" class="discuter-box">Discuter</a>
 </div>
 
-
 </body>
 </html>
-
-
