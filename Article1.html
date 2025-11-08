@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sujet 1</title>
+  <title>Œuvre — Galerie d’Art</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Georgia", serif;
       margin: 0;
       padding: 0;
       background-color: #ebeae5;
+      color: #333;
     }
 
     header {
@@ -20,13 +21,12 @@
       background: linear-gradient(-45deg, #08117b, #3c0404, #090f3c, #050c3c);
       background-size: 400% 400%;
       animation: gradientMove 15s ease infinite;
-      position: fixed; 
-      top: 0;        
+      position: fixed;
+      top: 0;
       left: 0;
-      width: 100%;    
-      z-index: 1000;  
+      width: 100%;
+      z-index: 1000;
     }
-
 
     header img {
       height: 40px;
@@ -55,34 +55,61 @@
     }
 
     .container {
-      max-width: 800px;
-      margin: 80px auto 20px;
+      max-width: 900px;
+      margin: 100px auto 40px;
       padding: 20px;
-      background-color: white;
+      background-color: #fdfdfb;
       border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
-    h1 {
+    .artwork {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+.artwork img {
+  max-width: 60%;          /* <-- réduit la taille à 60% de la largeur du container */
+  height: auto;            /* conserve les proportions */
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+  margin-bottom: 20px;
+  transition: transform 0.6s ease;
+}
+
+
+    .artwork img:hover {
+      transform: scale(1.02);
+    }
+
+    h2.undertitle {
       text-align: center;
-      color: #333;
+      color: #444;
+      font-style: italic;
+      font-weight: normal;
+      margin-bottom: 20px;
+      font-size: 22px;
     }
 
-      h2.undertitle {
-    text-align: center;   
-    color: #555;
-    font-weight: normal;
-    margin-top: 10px;
-    font-style: italic;
-  }
+    .author {
+      text-align: center;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
 
     article p {
-      text-align: justify;  
+      text-align: justify;
       line-height: 1.8;
       color: #555;
+      font-size: 16px;
+      margin-bottom: 15px;
     }
 
-    .discuter-box {
+    .retour-box {
       display: block;
       text-decoration: none;
       color: white;
@@ -93,10 +120,10 @@
       font-weight: bold;
       cursor: pointer;
       transition: background-color 0.2s, transform 0.2s;
-      margin-top: 30px;
+      margin-top: 40px;
     }
 
-    .discuter-box:hover {
+    .retour-box:hover {
       background-color: #050c3c;
       transform: translateY(-3px);
     }
@@ -106,26 +133,30 @@
 
 <header>
   <a href="index.html" class="home-tab">Accueil</a>
-  <img src="Méthos_Logo.png" alt="Logo">
+  <img src="Méthos_Logo.png" alt="Logo de la Galerie">
 </header>
 
 <div class="container">
-  <h1>Le jeu du PSG relève du sophisme:</h1>
-  <h2 class="undertitle">il se donne les apparences de la maitrise et de la profondeur tactique, mais dissimule un manque de cohérence réelle.</h2>
+  <div class="artwork">
+    <img src="Abstrait_001.png" alt="Œuvre d'art abstraite">
+  </div>
+
+  <h2 class="undertitle">Le souffle dans la bouteille</h2>
+  <p class="author">Éloi Marens — 2025</p>
+
   <article>
-    <p>On entend souvent dire « ils sont trop fort ». C’est vrai qu’à première vue, c’est magnifique à regarder : les passes s’enchaînent avec fluidité, le ballon circule vite, tout semble maîtrisé. Quand on regarde Paris jouer, on a parfois l’impression d’assister à une démonstration de football moderne, pleine de style et d’assurance. Mais en creusant un peu, on se rend compte que cette beauté cache encore pas mal de défauts.</p>
+    <p>Dans cette œuvre minimaliste, l’artiste explore la tension entre la légèreté du geste et la densité symbolique du motif. Une simple bouteille, esquissée de traits verts et bleus, se dresse au centre de la composition. En son cœur flotte une forme rouge, indéfinie mais vibrante, évoquant tour à tour un poisson, une flamme ou un battement de vie.
 
-    <p>Ce qui frappe le plus, c’est le décalage entre la forme et le fond. Le PSG donne l’impression de dominer, de tout contrôler, mais combien d’occasions finissent par être gâchées ? Combien d’actions brillantes se terminent sans but, faute de précision ou de lucidité ? C’est là où l’on retrouve une sorte de sophisme, une apparence de beauté : derrière la maîtrise technique et le spectacle, il y a une certaine fragilité. Le jeu est beau, oui, mais il manque parfois de tranchant, comme si Paris cherchait plus à séduire qu’à tuer le match.</p>
+Le tracé fluide et volontairement inachevé suggère le mouvement de l’eau, le passage du temps et la transparence des émotions. La bouteille, motif récurrent dans l’histoire de l’art, devient ici un espace de confinement poétique : elle renferme non pas un objet, mais une présence, un souffle.
 
-    <p>Ce sentiment se renforce quand on revoit certains matchs de cette année. Paris a souvent offert un football plaisant, mais sans toujours concrétiser sa supériorité. On garde l’impression d’une équipe qui fait tout bien, sauf l’essentiel : marquer quand il le faut, gérer ses temps faibles, rester concentrée. À force de vouloir bien faire, le PSG finit parfois par se compliquer la vie. C’est un peu frustrant, parce qu’on sent qu’il ne manque pas grand-chose pour que cette domination se traduise vraiment en efficacité.</p>
+L’économie du dessin et la justesse des lignes traduisent une recherche d’essentiel — une volonté de capturer la fragilité du monde contemporain à travers un langage graphique dépouillé. Cette œuvre, à la frontière du figuratif et de l’abstrait, invite à contempler le silence, l’équilibre et la mémoire des choses simples.</p>
 
-    <p>Pour un supporter, c’est à la fois beau et agaçant. Beau, parce que le jeu proposé est élégant, audacieux, vivant. Agaçant, parce qu’on sait que derrière cette allure parfaite se cachent des imprécisions qui coûtent cher : des passes manquées dans les moments décisifs, des frappes mal ajustées, des erreurs de concentration qui relancent l’adversaire. C’est ce paradoxe permanent : Paris éblouit, mais laisse toujours ce goût d’inachevé.</p>
+    <p>Éloi Marens est un artiste visuel contemporain spécialisé dans le dessin gestuel et la représentation de la légèreté à travers la ligne. Son travail explore les notions de mouvement, de silence et de fragilité dans la composition. Par une économie de moyens — souvent quelques traits précis et des couleurs discrètes — il parvient à suggérer des univers entiers, oscillant entre abstraction poétique et figuration minimaliste.
 
-    <p>Alors non, le jeu du PSG n’est pas un sophisme total, mais il n’est pas non plus parfait. Il brille par son esthétique, par sa capacité à captiver, mais il manque encore de rigueur dans le fond. On aime le voir jouer, on s’émerveille souvent, mais on finit aussi par soupirer devant toutes ces occasions manquées. C’est beau, oui — mais parfois, trop beau pour être vraiment solide.</p>
+Marens s’intéresse particulièrement à la relation entre le vide et la forme, cherchant à capter ce qui précède ou succède au geste : le souffle, la vibration, la trace d’une idée. Ses œuvres, à la fois sensibles et conceptuelles, invitent à une contemplation lente, presque méditative, où chaque ligne devient un fragment de mémoire ou d’émotion suspendue.</p>
   </article>
 
-  <!-- Discuter box -->
-  <a href="discussion1.html" class="discuter-box">Discuter</a>
+  <a href="index.html" class="retour-box">Retour à la galerie</a>
 </div>
 
 </body>
