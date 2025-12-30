@@ -1,136 +1,123 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galerie d'Art</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ebeae5;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exploration — Galerie d’Art</title>
 
-    header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      background: linear-gradient(-45deg, #08117b, #3c0404, #090f3c, #050c3c);
-      background-size: 400% 400%;
-      animation: gradientMove 15s ease infinite;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: #ebeae5;
+}
 
-    header img {
-      height: 60px;
-    }
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(-45deg, #08117b, #3c0404, #090f3c, #050c3c);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  padding: 14px 18px;
+  color: white;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+header img {
+  height: 38px;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 0 20px;
-    }
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
 
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 32px;
-      font-weight: 700;
-      color: #222;
-      letter-spacing: 1px;
-    }
+/* Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-auto-rows: 200px; /* default row height */
+  gap: 18px;
+  padding: 26px;
+}
 
-    .boxes {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 25px;
-      justify-content: center;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+/* Artwork card */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+}
 
-    .box {
-      display: block;
-      text-decoration: none;
-      color: white;
-      background: linear-gradient(135deg, #08117b, #3c0404);
-      padding: 30px 20px;
-      border-radius: 12px;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-      font-size: 18px;
-      font-weight: 600;
-    }
+/* Rectangle variations */
+.card.landscape {
+  grid-row: span 1;
+  grid-column: span 2;
+}
+.card.portrait {
+  grid-row: span 2;
+  grid-column: span 1;
+}
 
-    .box:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
-      background: linear-gradient(135deg, #3c0404, #08117b);
-    }
+.card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
 
-    .propose-box {
-      display: block;
-      text-decoration: none;
-      color: white;
-      background-color: #090f3c;
-      padding: 18px;
-      border-radius: 12px;
-      text-align: center;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.3s;
-      margin: 50px auto 20px auto;
-      font-size: 18px;
-      width: 200px;
-    }
-
-    .propose-box:hover {
-      background-color: #280600;
-      transform: translateY(-3px);
-    }
-
-    /* Section droits d'auteur */
-    .copyright {
-      text-align: center;
-      color: #555;
-      font-size: 14px;
-      margin: 40px 0;
-      line-height: 1.5;
-      padding: 0 10px;
-    }
-  </style>
+/* Hover / spotlight zoom effect */
+.card:hover img {
+  transform: scale(1.05);
+}
+.card.focused img {
+  transform: scale(1.1);
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <img src="Méthos_Logo.png" alt="Logo de la Galerie">
-  </header>
+<header>
+  <img src="Méthos_Logo.png" alt="Logo">
+  <strong>Galerie — Exploration</strong>
+</header>
 
-  <div class="container">
-    <h2>Galerie d'Art</h2>
+<div class="gallery">
+  <div class="card landscape"><img src="Im_0001.jpg"></div>
+  <div class="card portrait"><img src="Im_0002.jpg"></div>
+  <div class="card landscape"><img src="Im_0003.jpg"></div>
+  <div class="card portrait"><img src="Im_0004.jpg"></div>
+  <div class="card landscape"><img src="Im_0005.jpg"></div>
+  <div class="card portrait"><img src="Im_0006.jpg"></div>
+  <div class="card landscape"><img src="Im_0007.jpg"></div>
+  <div class="card portrait"><img src="Im_0008.jpg"></div>
+  <div class="card landscape"><img src="Im_0009.jpg"></div>
+</div>
 
-    <div class="boxes">
-      <a href="Abstrait.html" class="box">Abstrait<br><span style="font-weight:400; font-size:16px;">Plongez dans les formes et les couleurs</span></a>
-      <a href="Photographie.html" class="box">Photographie<br><span style="font-weight:400; font-size:16px;">Découvrez la lumière et l’émotion</span></a>
-    </div>
-
-  
-
-    <div class="copyright">
-      &copy; 2025 Galerie d'Art. Tous droits réservés. <br>
-      Il est strictement interdit de prendre des captures d’écran ou de reproduire les œuvres présentées sur ce site sans autorisation.
-    </div>
-  </div>
+<script>
+const cards = document.querySelectorAll(".card");
+window.addEventListener("scroll", () => {
+  const viewportCenter = window.scrollY + window.innerHeight / 2;
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    const cardCenter = rect.top + window.scrollY + rect.height / 2;
+    const distance = Math.abs(viewportCenter - cardCenter);
+    card.classList.toggle("focused", distance < 250);
+  });
+});
+</script>
 
 </body>
 </html>
