@@ -6,6 +6,10 @@
 <title>Exploration — Galerie d’Art</title>
 
 <style>
+html {
+  scroll-behavior: smooth; /* smooth sliding */
+}
+
 body {
   margin: 0;
   font-family: "Poppins", Arial, sans-serif;
@@ -40,49 +44,60 @@ header img {
 /* Gallery grid */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  grid-auto-rows: 200px; /* default row height */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
   gap: 18px;
   padding: 26px;
+
+  max-width: 86%;   /* reduce overall gallery width to ~92% of page */
+  margin: 0 auto;   /* center the gallery */
 }
 
-/* Artwork card */
+
+/* Cards */
 .card {
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
-  background: #fff;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border-radius: 18px;
   cursor: pointer;
+  transition: transform .35s ease, box-shadow .35s ease;
 }
 
-/* Rectangle variations */
+/* cool hover pop */
+.card:hover {
+  transform: scale(1.12);
+  box-shadow: 0 25px 50px rgba(0,0,0,.25);
+}
+
+/* rectangles shapes */
 .card.landscape {
-  grid-row: span 1;
   grid-column: span 2;
 }
+
 .card.portrait {
   grid-row: span 2;
-  grid-column: span 1;
 }
 
-.card img {
+/* image preview */
+.card img,
+.card video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  transition: transform 0.35s ease;
 }
 
-/* Hover / spotlight zoom effect */
-.card:hover img {
-  transform: scale(1.05);
+/* video initially hidden */
+.card video {
+  opacity: 0;
+  transition: opacity .35s ease;
 }
-.card.focused img {
-  transform: scale(1.1);
+
+/* when hovering -> show video */
+.card:hover video {
+  opacity: 1;
 }
 </style>
 </head>
@@ -95,26 +110,58 @@ header img {
 </header>
 
 <div class="gallery">
-  <div class="card landscape"><img src="Im_0001.jpg"></div>
-  <div class="card portrait"><img src="Im_0002.jpg"></div>
-  <div class="card landscape"><img src="Im_0003.jpg"></div>
-  <div class="card portrait"><img src="Im_0004.jpg"></div>
-  <div class="card landscape"><img src="Im_0005.jpg"></div>
-  <div class="card portrait"><img src="Im_0006.jpg"></div>
-  <div class="card landscape"><img src="Im_0007.jpg"></div>
-  <div class="card portrait"><img src="Im_0008.jpg"></div>
-  <div class="card landscape"><img src="Im_0009.jpg"></div>
+
+  <!-- Example item -->
+  <div class="card portrait">
+    <img src="Im_0001.jpg" alt="">
+    <video src="Vid_0001.mp4" muted loop></video>
+  </div>
+
+  <div class="card portrait">
+    <img src="Im_0002.jpg" alt="">
+    <video src="Vid_0002.mp4" muted loop></video>
+  </div>
+
+  <div class="card portrait">
+    <img src="Im_0003.jpg" alt="">
+    <video src="Vid_0003.mp4" muted loop></video>
+  </div>
+
+  <div class="card portrait">
+    <img src="Im_0004.jpg" alt="">
+    <video src="Vid_0004.mp4" muted loop></video>
+  </div>
+
+  <div class="card portrait">
+    <img src="Im_0005.jpg" alt="">
+    <video src="Vid_0005.mp4" muted loop></video>
+  </div>
+
+  <div class="card portrait">
+    <img src="Im_0006.jpg" alt="">
+    <video src="Vid_0006.mp4" muted loop></video>
+  </div>
+
+  <div class="card portrait">
+    <img src="Im_0007.jpg" alt="">
+    <video src="Vid_0007.mp4" muted loop></video>
+  </div>
+
+
 </div>
 
 <script>
-const cards = document.querySelectorAll(".card");
-window.addEventListener("scroll", () => {
-  const viewportCenter = window.scrollY + window.innerHeight / 2;
-  cards.forEach(card => {
-    const rect = card.getBoundingClientRect();
-    const cardCenter = rect.top + window.scrollY + rect.height / 2;
-    const distance = Math.abs(viewportCenter - cardCenter);
-    card.classList.toggle("focused", distance < 250);
+/* autoplay video only on hover to save power */
+document.querySelectorAll(".card").forEach(card => {
+  const video = card.querySelector("video");
+
+  card.addEventListener("mouseenter", () => {
+    video.currentTime = 0;
+    video.play();
+  });
+
+  card.addEventListener("mouseleave", () => {
+    video.pause();
   });
 });
 </script>
